@@ -3,6 +3,12 @@ defmodule Binary_Search do
     @lower :lower
     @found :found
 
+    # I could've made the algorithm way smaller and concise by
+    # having the calculation of the indexes and "range" in one function.
+    # As an experiment, I played around with the concept of separating
+    # which range to select from setting indexes.
+    # It's definately not necessary, but it's a fun experiment, nonetheless.
+
     @spec search(tuple, number, number, number | nil, atom) :: number | nil
     def search(tuple, element, low \\ 0, high \\ nil, _range \\ nil) 
 
