@@ -13,4 +13,8 @@ defmodule Recursion do
   def calc_max([], max), do: max
   def calc_max([head | tail], max) when head > max, do: calc_max(tail, head)
   def calc_max([_ | tail], max), do: calc_max(tail, max)
+
+  def calc_max_v2(list)
+  def calc_max_v2([head | tail]) when length(tail) == 1, do: head
+  def calc_max_v2([head | tail]), do: max(head, calc_max_v2(tail))
 end

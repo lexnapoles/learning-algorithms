@@ -14,6 +14,6 @@ defmodule Recursion_Test do
   end
 
   test "find max number of a list" do
-    assert Recursion.calc_max([0, 20, 100, 12, 80]) == 100
+    assert Recursion.calc_max_v2([-20, -100, -723, -12, -80, -20]) == -12
   end
 end
