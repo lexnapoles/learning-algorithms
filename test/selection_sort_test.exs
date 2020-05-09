@@ -1,12 +1,12 @@
 defmodule Selection_Sort_Test do
   use ExUnit.Case
 
-  @tag :pending
+  # @tag :pending
   test "returns empty list on empty list" do
     assert Selection_Sort.sort([]) == []
   end
 
-  @tag :pending
+  # @tag :pending
   test "returns the same list on a 1-element list" do
     list = [1]
 
