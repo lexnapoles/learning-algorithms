@@ -13,7 +13,27 @@ defmodule Recursion_Test do
     assert Recursion.count([1, 2, 3, 4]) == 4
   end
 
+  test "max returns nil on empty list" do
+    assert Recursion.calc_max([]) == nil
+  end
+
+  test "max returns element on single-element list" do
+    assert Recursion.calc_max([2]) == 2
+  end
+
   test "find max number of a list" do
-    assert Recursion.calc_max_v2([-20, -100, -723, -12, -80, -20]) == -12
+    assert Recursion.calc_max([-20, -100, 390, -723, -12, -80, -20]) == 390
+  end
+
+  test "max returns nil on empty list (tail call)" do
+    assert Recursion.calc_max_tail_call([]) == nil
+  end
+
+  test "max returns element on single-element list (tail call)" do
+    assert Recursion.calc_max_tail_call([2]) == 2
+  end
+
+  test "find max number of a list (tail call)" do
+    assert Recursion.calc_max_tail_call([-20, -100, 390, -723, -12, -80, -20]) == 390
   end
 end
