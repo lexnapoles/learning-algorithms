@@ -8,11 +8,6 @@ defmodule Quick_Sort do
     elements_lower_than_pivot = list |> Enum.filter(&(&1 < pivot))
     elements_higher_than_pivot = list |> Enum.filter(&(&1 > pivot))
 
-    [
-      sort(elements_lower_than_pivot),
-      [pivot],
-      sort(elements_higher_than_pivot)
-    ]
-    |> Enum.concat()
+    sort(elements_lower_than_pivot) ++ [pivot] ++ sort(elements_higher_than_pivot)
   end
 end
