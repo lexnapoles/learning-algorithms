@@ -8,9 +8,8 @@ defmodule Quick_Sort do
 
     {_, list_without_pivot} = list |> List.pop_at(index)
 
-    elements_lower_than_pivot = list_without_pivot |> Enum.filter(&(&1 < pivot))
-    elements_higher_than_pivot = list_without_pivot |> Enum.filter(&(&1 >= pivot))
+    {greater = greater, lower = lower} = list_without_pivot |> Enum.split_with(&(&1 > pivot))
 
-    sort(elements_lower_than_pivot) ++ [pivot] ++ sort(elements_higher_than_pivot)
+    sort(lower) ++ [pivot] ++ sort(greater)
   end
 end
